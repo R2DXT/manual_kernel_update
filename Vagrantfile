@@ -19,6 +19,7 @@ Vagrant.configure("2") do |config|
   MACHINES.each do |boxname, boxconfig|
     # Disable shared folders
     config.vm.synced_folder ".", "/vagrant", disabled: true
+	config.vbguest.auto_update = false
     # Apply VM config
     config.vm.define boxname do |box|
       # Set VM base box and hostname
